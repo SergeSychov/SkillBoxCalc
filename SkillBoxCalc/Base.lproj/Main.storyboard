@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SkillBoxCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kwg-lU-ECz">
+                                <rect key="frame" x="16" y="60" width="382" height="789"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SkillBox Calculator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x68-iy-tBH" userLabel="NameLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="104"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-g9-ewS" userLabel="ResultLabel">
+                                        <rect key="frame" x="0.0" y="124" width="382" height="104"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="99"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDT-mX-3KZ" userLabel="CalculationLabel">
+                                        <rect key="frame" x="0.0" y="248" width="382" height="52.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="o1Q-bT-Jg2" userLabel="ButtonsArea">
+                                        <rect key="frame" x="0.0" y="320.5" width="382" height="468.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-7k-a1E" userLabel="1lineStack">
+                                                <rect key="frame" x="4" y="0.0" width="374" height="90.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY9-qk-LhH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="pY9-qk-LhH" secondAttribute="height" multiplier="1:1" id="UJR-07-KoX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="7"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="7">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DPn-KU-k2J"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPh-K8-vOk">
+                                                        <rect key="frame" x="94.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="BPh-K8-vOk" secondAttribute="height" multiplier="1:1" id="y25-uV-m2Q"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="8"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="8">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SA2-fl-emy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7th-ks-Vc6">
+                                                        <rect key="frame" x="189" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="7th-ks-Vc6" secondAttribute="height" multiplier="1:1" id="xUD-Jy-2SM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="9"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="9">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2us-8d-eXT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Goj-t5-nx3">
+                                                        <rect key="frame" x="283.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Goj-t5-nx3" secondAttribute="height" multiplier="1:1" id="jhW-GG-916"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="/"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="/">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="operationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IQE-7d-rK1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Goj-t5-nx3" firstAttribute="width" secondItem="pY9-qk-LhH" secondAttribute="width" id="5M5-jN-teh"/>
+                                                    <constraint firstItem="7th-ks-Vc6" firstAttribute="width" secondItem="pY9-qk-LhH" secondAttribute="width" id="8et-VK-2Ic"/>
+                                                    <constraint firstItem="BPh-K8-vOk" firstAttribute="width" secondItem="pY9-qk-LhH" secondAttribute="width" id="98A-NR-ueo"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8BA-6T-1eC" userLabel="2lineStack">
+                                                <rect key="frame" x="4" y="94.5" width="374" height="90.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-a3-NrT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="4"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="4">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvA-cQ-0Rm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6U-sg-G5q">
+                                                        <rect key="frame" x="94.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="5"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="5">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HxM-ch-0jp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-QL-1fd">
+                                                        <rect key="frame" x="189" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="6"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="6">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qf6-HT-C0M"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dif-BZ-8br">
+                                                        <rect key="frame" x="283.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="*"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="*">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="operationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XMG-L2-n7z"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Yma-QL-1fd" firstAttribute="width" secondItem="gEb-a3-NrT" secondAttribute="width" id="3Jp-ja-F5R"/>
+                                                    <constraint firstItem="y6U-sg-G5q" firstAttribute="width" secondItem="gEb-a3-NrT" secondAttribute="width" id="AqD-Ow-B2r"/>
+                                                    <constraint firstItem="Dif-BZ-8br" firstAttribute="width" secondItem="gEb-a3-NrT" secondAttribute="width" id="Ujn-k6-7rU"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HBM-HA-6Fe" userLabel="3lineStack">
+                                                <rect key="frame" x="4" y="189" width="374" height="90.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8x-Jc-H21">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="1"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="1">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ao-bC-Mem"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOH-br-Nce">
+                                                        <rect key="frame" x="94.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="2"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="2">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NxD-rf-4sw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtg-XK-avi">
+                                                        <rect key="frame" x="189" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="3"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="3">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kct-qS-tWb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Llz-me-D2y">
+                                                        <rect key="frame" x="283.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="-"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="-">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="operationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="muP-Ia-ws4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Llz-me-D2y" firstAttribute="width" secondItem="F8x-Jc-H21" secondAttribute="width" id="DLM-cT-e9x"/>
+                                                    <constraint firstItem="tOH-br-Nce" firstAttribute="width" secondItem="F8x-Jc-H21" secondAttribute="width" id="UB1-06-FBw"/>
+                                                    <constraint firstItem="Qtg-XK-avi" firstAttribute="width" secondItem="F8x-Jc-H21" secondAttribute="width" id="uvA-Jg-USw"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pWi-oD-YtI" userLabel="4lineStack">
+                                                <rect key="frame" x="4" y="283.5" width="374" height="90.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juy-Fu-38I">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="0"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="0">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PoT-dD-VMb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-5a-BAt">
+                                                        <rect key="frame" x="189" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="-/+"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="-/+">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="numericButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXy-y9-V2q"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bf-zp-Nqb">
+                                                        <rect key="frame" x="283.5" y="0.0" width="90.5" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="+"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="+">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="operationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1n-gb-YP3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="7Bf-zp-Nqb" firstAttribute="width" secondItem="iJO-5a-BAt" secondAttribute="width" id="83l-lR-T73"/>
+                                                    <constraint firstItem="iJO-5a-BAt" firstAttribute="width" secondItem="juy-Fu-38I" secondAttribute="width" multiplier="1/2" constant="-2" id="DDm-pq-a1f"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-8b-mcv" userLabel="5lineStack">
+                                                <rect key="frame" x="4" y="378" width="374" height="90.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D74-hY-QC9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="C"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="C">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="clearButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="g9r-LR-yOv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9d-Yt-Uc3">
+                                                        <rect key="frame" x="189" y="0.0" width="185" height="90.5"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="="/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="=">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="equalButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="91p-LQ-cfU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="H9d-Yt-Uc3" firstAttribute="width" secondItem="D74-hY-QC9" secondAttribute="width" id="TEx-q2-dXN"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstItem="8I5-8b-mcv" firstAttribute="leading" secondItem="o1Q-bT-Jg2" secondAttribute="leading" constant="4" id="1ov-Xz-0Bk"/>
+                                            <constraint firstAttribute="trailing" secondItem="8I5-8b-mcv" secondAttribute="trailing" constant="4" id="6Q7-BY-IJc"/>
+                                            <constraint firstItem="8BA-6T-1eC" firstAttribute="leading" secondItem="o1Q-bT-Jg2" secondAttribute="leading" constant="4" id="7dK-ee-m8d"/>
+                                            <constraint firstItem="pWi-oD-YtI" firstAttribute="leading" secondItem="o1Q-bT-Jg2" secondAttribute="leading" constant="4" id="D6z-bQ-CyH"/>
+                                            <constraint firstAttribute="trailing" secondItem="HBM-HA-6Fe" secondAttribute="trailing" constant="4" id="EOl-ER-XVM"/>
+                                            <constraint firstAttribute="trailing" secondItem="8BA-6T-1eC" secondAttribute="trailing" constant="4" id="hJW-OX-qyL"/>
+                                            <constraint firstItem="J0K-7k-a1E" firstAttribute="leading" secondItem="o1Q-bT-Jg2" secondAttribute="leading" constant="4" id="kSg-Vd-Zuf"/>
+                                            <constraint firstAttribute="trailing" secondItem="J0K-7k-a1E" secondAttribute="trailing" constant="4" id="rGE-hN-cxa"/>
+                                            <constraint firstItem="HBM-HA-6Fe" firstAttribute="leading" secondItem="o1Q-bT-Jg2" secondAttribute="leading" constant="4" id="yaz-2J-krJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="pWi-oD-YtI" secondAttribute="trailing" constant="4" id="yqO-wL-WxI"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pDT-mX-3KZ" firstAttribute="leading" secondItem="Kwg-lU-ECz" secondAttribute="leading" id="3qy-bE-YOc"/>
+                                    <constraint firstItem="o1Q-bT-Jg2" firstAttribute="leading" secondItem="Kwg-lU-ECz" secondAttribute="leading" id="6I0-g7-0fC"/>
+                                    <constraint firstAttribute="trailing" secondItem="pDT-mX-3KZ" secondAttribute="trailing" id="9bX-sv-u5g"/>
+                                    <constraint firstItem="pDT-mX-3KZ" firstAttribute="height" secondItem="lU8-g9-ewS" secondAttribute="height" multiplier="1/2" id="F8Q-R9-Eal"/>
+                                    <constraint firstItem="x68-iy-tBH" firstAttribute="leading" secondItem="Kwg-lU-ECz" secondAttribute="leading" id="KGo-0h-Sh2"/>
+                                    <constraint firstItem="o1Q-bT-Jg2" firstAttribute="height" secondItem="lU8-g9-ewS" secondAttribute="height" multiplier="4.5" id="eUW-2A-9KX"/>
+                                    <constraint firstAttribute="trailing" secondItem="o1Q-bT-Jg2" secondAttribute="trailing" id="fbo-eK-HbO"/>
+                                    <constraint firstAttribute="trailing" secondItem="x68-iy-tBH" secondAttribute="trailing" id="pM4-pm-iwy"/>
+                                    <constraint firstItem="lU8-g9-ewS" firstAttribute="leading" secondItem="Kwg-lU-ECz" secondAttribute="leading" id="qNH-Vw-kfO"/>
+                                    <constraint firstItem="lU8-g9-ewS" firstAttribute="height" secondItem="x68-iy-tBH" secondAttribute="height" id="qmN-54-K8v"/>
+                                    <constraint firstAttribute="bottom" secondItem="o1Q-bT-Jg2" secondAttribute="bottom" id="ssO-vX-LWI"/>
+                                    <constraint firstItem="x68-iy-tBH" firstAttribute="top" secondItem="Kwg-lU-ECz" secondAttribute="top" id="udj-PI-ES2"/>
+                                    <constraint firstAttribute="trailing" secondItem="lU8-g9-ewS" secondAttribute="trailing" id="zLJ-17-mH9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kwg-lU-ECz" secondAttribute="bottom" constant="16" id="7gM-Yw-kdh"/>
+                            <constraint firstItem="Kwg-lU-ECz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="RAW-Yz-j8u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kwg-lU-ECz" secondAttribute="trailing" constant="16" id="YFw-vl-tQG"/>
+                            <constraint firstItem="Kwg-lU-ECz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kcR-cC-6KT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calculationLabel" destination="pDT-mX-3KZ" id="XRz-Dv-9Eq"/>
+                        <outlet property="nameLabel" destination="x68-iy-tBH" id="lcS-mt-vpD"/>
+                        <outlet property="resultLabel" destination="lU8-g9-ewS" id="rFn-RQ-Ucw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
