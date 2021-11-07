@@ -138,18 +138,22 @@ class ViewController: UIViewController {
             calculationLabel.text = String(firstArgu!) + " " + name
         } else if state == CalcStates.seconArguIn {
             state = .operationIn
-            guard let result = operation!.makeOperation(firstArgu!, secondArgu!) else {
+            do{
+                let result = try operation!.makeOperation(firstArgu!, secondArgu!)
+                firstArgu = result
+                operation = operationFrom(name)
+                resultLabel.text = String(firstArgu!)
+                calculationLabel.text = String(firstArgu!)
+                                            + " " + operation!.toStr()
+
+                isPostiveNumber = result > 0
+            } catch {
                 setReady()
-                resultLabel.text = Constantstring.Calculator.errorName
+                resultLabel.text = error.localizedDescription
                 return
             }
-            firstArgu = result
-            operation = operationFrom(name)
-            resultLabel.text = String(firstArgu!)
-            calculationLabel.text = String(firstArgu!)
-                                        + " " + operation!.toStr()
 
-            isPostiveNumber = result > 0
+            
         } else if state == CalcStates.resIn {
             state = .operationIn
             operation = operationFrom(name)!
@@ -162,35 +166,25 @@ class ViewController: UIViewController {
     func calculate() {
         if state == CalcStates.ready || state == CalcStates.firstArguIn {
             return
-        } else if state == CalcStates.operationIn {
+        } else if state == CalcStates.operationIn || state == CalcStates.seconArguIn || state == CalcStates.resIn  {
             state = .resIn
             secondArgu = Int(resultLabel.text!)!
-            guard let result = operation!.makeOperation(firstArgu!, secondArgu!) else {
+            
+            do{
+                let result = try operation!.makeOperation(firstArgu!, secondArgu!)
+                resultLabel.text = String(result)
+                calculationLabel.text = String(firstArgu!)
+                                            + " " + operation!.toStr()
+                                            + " " + String(secondArgu!)
+                                            + " = " + String(result)
+                firstArgu = result
+                isPostiveNumber = result > 0
+                
+            } catch {
                 setReady()
-                resultLabel.text = Constantstring.Calculator.errorName
+                resultLabel.text = error.localizedDescription
                 return
             }
-            resultLabel.text = String(result)
-            calculationLabel.text = String(firstArgu!)
-                                        + " " + operation!.toStr()
-                                        + " " + String(secondArgu!)
-                                        + " = " + String(result)
-            firstArgu = result
-            isPostiveNumber = result > 0
-        } else if state == CalcStates.seconArguIn || state == CalcStates.resIn {
-            state = .resIn
-            guard let result = operation!.makeOperation(firstArgu!, secondArgu!) else {
-                setReady()
-                resultLabel.text = Constantstring.Calculator.errorName
-                return
-            }
-            resultLabel.text = String(result)
-            calculationLabel.text = String(firstArgu!)
-                                        + " " + operation!.toStr()
-                                        + " " + String(secondArgu!)
-                                        + " = " + String(result)
-            firstArgu = result
-            isPostiveNumber = result > 0
         }
     }
     
@@ -238,24 +232,35 @@ enum CalcStates {
 }
 
 
-
 enum MathOperation {
     case sum, substract, multyply, devide
     
-    func makeOperation(_ argument: Int, _ secondArgument: Int) -> Int? {
+    func makeOperation(_ argument: Int, _ secondArgument: Int)throws -> Int {
         switch self {
         case .sum:
-            return (argument + secondArgument)
-        case .substract:
-            return (argument - secondArgument)
-        case .multyply:
-            return (argument * secondArgument)
-        case .devide:
-            if secondArgument == 0 {
-                return nil
-            } else {
-                return (argument / secondArgument)
+            let (res, over) = argument.addingReportingOverflow(secondArgument)
+            if over {
+                throw MathOperationError.numOverflow
             }
+            return res
+        case .substract:
+            let (res, over) = argument.subtractingReportingOverflow(secondArgument)
+            if over {
+                throw MathOperationError.numOverflow
+            }
+            return res
+        case .multyply:
+            let (res, over) = argument.multipliedReportingOverflow(by: secondArgument)
+            if over {
+                throw MathOperationError.numOverflow
+            }
+            return res
+        case .devide:
+            let (res, over) = argument.dividedReportingOverflow(by: secondArgument)
+            if over {
+                throw MathOperationError.zeroDevide
+            }
+            return res
         }
     }
     
