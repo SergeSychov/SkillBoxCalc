@@ -17,20 +17,3 @@ enum Constantstring {
         static let overflowErrorStr = "Ошибка\n - переполнение"
     }
 }
-
-enum MathOperationError: Error {
-    case zeroDevide
-    case numOverflow
-}
-
-extension MathOperationError: LocalizedError {
-    public var errorDescription: String?{
-        switch self {
-        case .zeroDevide:
-            return NSLocalizedString(Constantstring.Errors.zeroDivideErrorStr, comment: "zero divide")
-        case .numOverflow:
-            return NSLocalizedString(Constantstring.Errors.overflowErrorStr, comment: "overflow")
-        }
-    }
-}
-
